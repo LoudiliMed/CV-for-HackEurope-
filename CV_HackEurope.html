@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Loudili Mohamed</title>
+  <style>
+    :root{
+      --blue-0:#2a0aa8;
+      --blue-1:#3a0bd6;
+      --blue-2:#4b12ff;
+      --orange:#f08a00;
+
+      --ink:#111;
+      --muted:#444;
+      --paper:#ffffff;
+      --bg:#f4f5fb;
+
+      --border:#1f1f1f;
+      --shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: var(--bg);
+      line-height: 1.25;
+    }
+
+    /* Layout: simple blue bar + main content */
+    .app{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns: 86px 1fr;
+    }
+
+    .bluebar{
+      position:relative;
+      background:
+        radial-gradient(1200px 600px at 100% 10%, rgba(255,255,255,.10), transparent 60%),
+        radial-gradient(900px 500px at 90% 100%, rgba(255,255,255,.08), transparent 55%),
+        linear-gradient(180deg, var(--blue-2), var(--blue-0));
+      overflow:hidden;
+    }
+    .bluebar::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size: 8px 8px;
+      opacity:.22;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+
+    .main{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .topbar{
+      background: var(--orange);
+      color:#fff;
+      height: 50px;
+      display:flex;
+      align-items:center;
+      padding: 0 14px;
+      border-bottom: 2px solid rgba(0,0,0,.25);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .content{ padding: 14px; overflow:auto; }
+    .page{
+      background: var(--paper);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 2px;
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 14px 14px 18px;
+    }
+
+    /* CV typography */
+    h1{ margin:0; font-size: 24px; letter-spacing:.2px; }
+    .subtitle{ margin: 4px 0 8px 0; font-weight:750; color:#000; font-size: 14px; }
+    .contact{
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+    .contact a{ color:#000; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.25); }
+    .contact a:hover{ border-bottom-color:#000; }
+
+    .pill{
+      display:inline-block;
+      margin-top: 6px;
+      padding: 7px 10px;
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      background:#fff;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+
+    .section{ margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(0,0,0,.14); }
+    .section-title{
+      margin: 0 0 8px 0;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #000;
+      font-weight: 900;
+    }
+
+    .item{ margin: 8px 0 10px 0; }
+    .item .head{
+      display:flex; flex-wrap:wrap;
+      justify-content:space-between;
+      gap: 8px;
+      font-weight: 850;
+      font-size: 13.5px;
+    }
+    .item .where{ font-weight:700; color:#000; margin-top: 2px; font-size: 13px; }
+    .item .meta{ color: var(--muted); font-size: 12.5px; margin-top: 3px; }
+
+    ul{ margin: 6px 0 0 18px; padding:0; }
+    li{ margin: 2px 0; font-size: 12.8px; }
+
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .kv{ margin: 4px 0; color: var(--muted); font-size: 13px; }
+    .kv strong{ color:#000; }
+
+    /* Print: keep <= 2 pages */
+    @media print{
+      @page { size: A4; margin: 12mm; }
+      body{ background:#fff; }
+      .bluebar, .topbar{ display:none; }
+      .app{ grid-template-columns: 1fr; }
+      .content{ padding:0; }
+      .page{ box-shadow:none; border:none; padding:0; max-width:none; }
+      h1{ font-size: 22px; }
+      .subtitle{ font-size: 13px; }
+      .contact{ font-size: 11.5px; }
+      .section{ margin-top: 8px; padding-top: 8px; }
+      .section-title{ font-size: 10.5px; margin-bottom: 6px; }
+      .item{ margin: 6px 0 8px 0; }
+      .item .head{ font-size: 12.8px; }
+      .item .where{ font-size: 12.3px; }
+      .item .meta, .kv, li{ font-size: 11.7px; }
+      ul{ margin-top: 5px; }
+      .pill{ font-size: 11.5px; padding: 6px 9px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="bluebar" aria-hidden="true"></div>
+
+    <main class="main">
+      <header class="topbar">Application</header>
+
+      <section class="content">
+        <article class="page">
+          <header>
+            <h1>LOUDILI MOHAMED</h1>
+            <div class="subtitle">ENGINEERING STUDENT — CENTRALE LILLE</div>
+
+            <p class="contact">
+              E: <a href="mailto:mohamed.loudili@centrale.centralelille.fr">mohamed.loudili@centrale.centralelille.fr</a>
+              &nbsp;|&nbsp; T: +33 7 45 53 56 81
+              &nbsp;|&nbsp; A: Lille, France
+              &nbsp;|&nbsp; 05/11/2004
+              <br />
+              LinkedIn: <a href="https://www.linkedin.com/in/mohamed-loudili/" target="_blank" rel="noreferrer">www.linkedin.com/in/mohamed-loudili/</a>
+            </p>
+
+            <span class="pill">Recently appointed: President — Rézoléo</span>
+          </header>
+
+          <section class="section">
+            <h2 class="section-title">Professional Objective</h2>
+            <div class="kv" style="margin:0;">
+              Seeking to participate in <strong>HackEurope</strong> to build a high-impact prototype with a strong team, apply my
+              skills in software engineering, infrastructure, and cybersecurity, and learn fast through intensive delivery under real constraints.
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="item">
+              <div class="head">
+                <div>First-year Master's student</div>
+                <div>2025 – 2028</div>
+              </div>
+              <div class="where">Graduate school of multidisciplinary engineering | Lille, France</div>
+            </div>
+
+            <div class="item">
+              <div class="head">
+                <div>Bachelor's Degree at the University of Lille</div>
+                <div>2025 – 2026</div>
+              </div>
+              <div class="where">Lille / France</div>
+              <div class="meta">Relevant Courses: Mathematics, Statistics</div>
+            </div>
+
+            <div class="item">
+              <div class="head">
+                <div>3-year advanced undergraduate studies in Maths</div>
+                <div>2022 – 2025</div>
+              </div>
+              <div class="where">Morocco / France</div>
+              <div class="meta">
+                Core Subjects: Mathematics, Physics, Engineering Science, preparing for the nationwide competitive examinations
+                for entry to the top engineering schools in France
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="head">
+                <div>A-levels (Advanced Level qualifications)</div>
+                <div>2022</div>
+              </div>
+              <div class="where">Morocco</div>
+              <div class="meta">Graduated with High Honours.</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="item">
+              <div class="head">
+                <div>President — Rézoléo</div>
+                <div>Recently appointed – Present</div>
+              </div>
+              <div class="where">Centrale Lille Campus, France</div>
+              <ul>
+                <li>Lead the association and coordinate teams delivering campus digital services.</li>
+                <li>Own infrastructure priorities (network/Wi-Fi, servers, service reliability) and execution.</li>
+                <li>Drive security and maintainability (access control, change management, documentation, incident handling).</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="head">
+                <div>Operations Team Member — Rézoléo</div>
+                <div>2025 – Present</div>
+              </div>
+              <div class="where">Centrale Lille Campus, France</div>
+              <ul>
+                <li>Contribute to the management and optimization of the campus network and Wi-Fi infrastructure (Git/JS/Linux).</li>
+                <li>Support hosting and supervision of on-site servers, ensuring reliable digital services.</li>
+                <li>Assist users with technical issues to improve system accessibility and stability.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid2">
+              <div class="kv"><strong>Programming:</strong> Python, JavaScript, C</div>
+              <div class="kv"><strong>Tools & Technologies:</strong> Linux, Git, Docker, Networking Fundamentals</div>
+            </div>
+            <div class="kv" style="margin-top:8px;"><strong>Machine Learning:</strong> Basic ML Concepts, Deep Learning Foundations</div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="grid2">
+              <div class="kv"><strong>French:</strong> Native</div>
+              <div class="kv"><strong>Arabic:</strong> Native</div>
+              <div class="kv"><strong>English:</strong> Fluent</div>
+              <div class="kv"><strong>German:</strong> Beginner</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Soft Skills / Certifications / Interests</h2>
+            <div class="kv"><strong>Soft skills:</strong> Strong work ethic, leadership, teamwork, communication.</div>
+            <div class="kv"><strong>Certification:</strong> FreeCodeCamp — Legacy JavaScript Certification</div>
+            <div class="kv"><strong>Interests:</strong> Computing, AI, Basketball, Video Games</div>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
